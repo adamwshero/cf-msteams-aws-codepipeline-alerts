@@ -1,7 +1,11 @@
 # codepipeline-build-alerts
 
-Cloudformation custom resource to manage MS Teams notifications for AWS CodePipeline events.  
-[![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg)](https://www.python.org/downloads/release/python-370/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Cloudformation custom resource to manage MS Teams notifications for AWS CodePipeline events.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg)](https://www.python.org/downloads/release/python-370/)
+![](https://img.shields.io/maintenance/yes/2020.svg)
+
+
 
 ---
 ## Account
