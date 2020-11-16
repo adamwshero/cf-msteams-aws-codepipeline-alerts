@@ -126,6 +126,11 @@ In order to delete our Serverless Application recently deployed you can use the 
 ```bash
 cfn delete-stack -c yourStackName --profile yourAccountAlias
 ```
+## Resources
+* https://aws.amazon.com/premiumsupport/knowledge-center/sns-lambda-webhooks-chime-slack-teams/
+* https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using
+* https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook
+* https://medium.com/@sebastian.phelps/aws-cloudwatch-alarms-on-microsoft-teams-9b5239e23b64
 
 # Owner
 Adam Shero<br>
