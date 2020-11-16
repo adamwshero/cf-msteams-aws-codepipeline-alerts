@@ -1,0 +1,6 @@
+{
+    "TeamNotificationFunction": {
+        "LOG_LEVEL": "DEBUG",
+        "MSTEAMSWEBHOOK_ALLALERTS": "https://outlook.office.com/webhook/your-webhook-abcdefg/IncomingWebhook/524e73aaf25440a6a81abcdefg"
+    }
+}

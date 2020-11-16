@@ -1,0 +1,10 @@
+{
+    "Parameters": {
+        "Environment": "dev",
+        "Application": "codepipeline-notifications",
+        "MsTeamsWebHookAllAlerts": "https://outlook.office.com/webhook/your-webhook-d7955f8463f9/IncomingWebhook/goes-here-c406b19e74cd",
+        "MsTeamsWebHookOnlyFailures": "https://outlook.office.com/webhook/your-webhook-d7955f8463f9/IncomingWebhook/goes-here-c406b19e74cd",
+        "PipelineNames": "pipeline1,pipeline2",
+        "LogLevel": "WARNING"
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0",
+  "id": "123",
+  "detail-type": "CodePipeline Pipeline Execution State Change",
+  "source": "aws.codepipeline",
+  "account": "012345678",
+  "time": "2019-12-22T18:43:48Z",
+  "region": "us-east-1",
+  "resources": [
+      "arn:aws:codepipeline:us-east-1:account_ID:test-pipeline"
+  ],
+  "detail": {
+      "pipeline": "test-pipeline",
+      "version": "1",
+      "state": "STARTED",
+      "execution-id": "456"
+  }
+}

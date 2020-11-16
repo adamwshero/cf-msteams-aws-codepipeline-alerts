@@ -1,0 +1,26 @@
+{
+    "version": "0",
+    "id": "123",
+    "detail-type": "CodePipeline Action Execution State Change",
+    "source": "aws.codepipeline",
+    "account": "1234567890",
+    "time": "2019-12-22T18:43:48Z",
+    "region": "us-east-1",
+    "resources": [
+        "arn:aws:codepipeline:us-east-1:account_ID:your-pipeline-name"
+    ],
+    "detail": {
+        "pipeline": "your-pipeline-name",
+        "version": "1",
+        "execution-id": "b71a798d-413a-4104-be01-f819de2850bd",
+        "stage": "IGNORE",
+        "action": "TEST-ACTION",
+        "state": "SUCCEEDED",
+        "type": {
+            "owner": "AWS",
+            "category": "Deploy",
+            "provider": "CodeDeploy",
+            "version": 1
+        }
+    }
+}

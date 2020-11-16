@@ -1,0 +1,70 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  cpe-teams-codepipeline-build-alerts
+
+  Pushes codepipeline build alerts to an MS Teams channel
+
+Parameters:
+  # Tags
+  Environment:
+    Type: String
+  BusinessUnit:
+    Type: String
+  Application:
+    Type: String
+  Owner:
+    Type: String
+  OwnerContact:
+    Type: String
+  CodePath:
+    Type: String
+  MsTeamsWebHookAllAlerts:
+    Type: String
+  MsTeamsWebHookOnlyFailures:
+    Type: String
+  PipelineNames:
+    Type: CommaDelimitedList
+  LogLevel:
+    Type: String
+
+Globals:
+  Function:
+    Timeout: 60
+    Tags:
+      Name: !Sub ${Environment}-${BusinessUnit}-${Application}
+      BusinessUnit: !Ref BusinessUnit
+      Application: !Ref Application
+      Environment: !Ref Environment
+      Owner: !Ref Owner
+      OwnerContact: !Ref OwnerContact
+      CodePath: !Ref CodePath
+
+Resources:
+  TeamNotificationFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      CodeUri: cpe_teams_codepipeline_build_alerts/
+      Handler: app.lambda_handler
+      Runtime: python3.7
+      Environment:
+        Variables:
+          MSTEAMSWEBHOOK_ALLALERTS: !Ref MsTeamsWebHookAllAlerts
+          MSTEAMSWEBHOOK_ONLYFAILURES: !Ref MsTeamsWebHookOnlyFailures
+          LOG_LEVEL: !Ref LogLevel
+      Policies:
+      - arn:aws:iam::aws:policy/AWSCodePipelineReadOnlyAccess
+      Events:
+        CodepipelineEventsRule:
+          Type: CloudWatchEvent
+          Properties:
+            Pattern:
+              source:
+                - aws.codepipeline
+              detail-type:
+                # Trying with just action state change; a bit verbose otherwise
+                # - CodePipeline Pipeline Execution State Change
+                - CodePipeline Action Execution State Change
+                # - CodePipeline Stage Execution State Change
+              detail:
+                pipeline: !Ref PipelineNames
