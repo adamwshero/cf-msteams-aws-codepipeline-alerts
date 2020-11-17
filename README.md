@@ -5,12 +5,6 @@
 # codepipeline-build-alerts
 Cloudformation custom resource to manage MS Teams notifications for AWS CodePipeline events.
 
----
-## Account
-**PROD**: yourAccountAlias<br>
-**DEV**: yourAccountAlias
-
----
 ## Usage
 1. Create a new MS Teams channel for build success notifications (optional)
 2. Create a new MS Teams channel for build failure notifications
@@ -121,7 +115,7 @@ sam logs -n TeamNotificationFunction --stack-name dev-codepipeline-notifications
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
-## Cleanup
+## Destroy
 
 In order to delete our Serverless Application recently deployed you can use the following AWS CLI Command:
 
